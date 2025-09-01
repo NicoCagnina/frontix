@@ -1,0 +1,9 @@
+TODO: replace this with the actual url
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://frontix.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
