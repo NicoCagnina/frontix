@@ -1,5 +1,6 @@
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import React from "react";
+import Image from "next/image";
 
 export default function Benefits() {
   return (
@@ -9,7 +10,7 @@ export default function Benefits() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 items-end relative overflow-hidden">
         <div className="bg-focused-text p-6 rounded-lg shadow-md flex flex-col justify-center min-h-[300px] z-10">
-          <img
+          <Image
             src="/icons/KeysIcon.svg"
             alt="Beneficio 1"
             width={60}
@@ -44,7 +45,7 @@ export default function Benefits() {
         </div>
 
         <div className="bg-focused-text p-6 rounded-lg shadow-md flex flex-col items-start justify-center min-h-[300px] z-10">
-          <img
+          <Image
             src="/icons/CalendarIcon.svg"
             alt="Beneficio 3"
             width={55}

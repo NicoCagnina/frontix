@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Carousel from "./ui/carousel";
 
-const data = [
+interface PlatformItem {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+}
+
+const data: PlatformItem[] = [
   {
     id: 1,
     image: "/images/platform/1.svg",
@@ -29,7 +36,7 @@ const data = [
   },
 ];
 
-const Card = ({ item }: { item: any }) => (
+const Card = ({ item }: { item: PlatformItem }) => (
   <div className="w-full h-[360px] sm:h-[380px] lg:h-[400px] rounded-2xl border border-gray-200 p-4 bg-white overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-all duration-300">
     <div className="w-full h-48 sm:h-52 lg:h-56 mb-4 rounded-xl overflow-hidden">
       <Image

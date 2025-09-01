@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
-import Card from "@/components/Card";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import AboutFrontix from "@/components/AboutFrontix";

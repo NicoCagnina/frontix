@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 interface CarouselProps {
   children: React.ReactNode[];
@@ -35,17 +35,7 @@ export default function Carousel({
 
   useEffect(() => {}, []);
 
-  const startAutoplay = () => {
-    if (!isAutoplayActive) return;
-
-    if (autoplayType === "continuous") {
-      startContinuousAutoplay();
-    } else {
-      startDiscreteAutoplay();
-    }
-  };
-
-  const startDiscreteAutoplay = () => {
+  const startDiscreteAutoplay = useCallback(() => {
     autoplayRef.current = setInterval(() => {
       if (!scrollContainerRef.current || !isAutoplayActive) return;
 
@@ -73,9 +63,9 @@ export default function Carousel({
         container.scrollTo({ left: nextScrollPosition, behavior: "smooth" });
       }
     }, autoplaySpeed);
-  };
+  }, [isAutoplayActive, itemClassName, gap, loop, autoplaySpeed]);
 
-  const startContinuousAutoplay = () => {
+  const startContinuousAutoplay = useCallback(() => {
     if (!scrollContainerRef.current || !isAutoplayActive) return;
 
     const container = scrollContainerRef.current;
@@ -124,9 +114,24 @@ export default function Carousel({
 
       animationRef.current = requestAnimationFrame(animate);
     }, 100);
-  };
+  }, [isAutoplayActive, smoothScrollSpeed]);
 
-  const stopAutoplay = () => {
+  const startAutoplay = useCallback(() => {
+    if (!isAutoplayActive) return;
+
+    if (autoplayType === "continuous") {
+      startContinuousAutoplay();
+    } else {
+      startDiscreteAutoplay();
+    }
+  }, [
+    isAutoplayActive,
+    autoplayType,
+    startContinuousAutoplay,
+    startDiscreteAutoplay,
+  ]);
+
+  const stopAutoplay = useCallback(() => {
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
       autoplayRef.current = null;
@@ -136,7 +141,7 @@ export default function Carousel({
       cancelAnimationFrame(animationRef.current);
       animationRef.current = null;
     }
-  };
+  }, []);
 
   const handleMouseEnter = () => {
     if (autoplay) {
@@ -175,14 +180,14 @@ export default function Carousel({
     return 1;
   };
 
-  const updateCurrentIndex = () => {
+  const updateCurrentIndex = useCallback(() => {
     if (!scrollContainerRef.current) return;
 
     const container = scrollContainerRef.current;
     const itemWidth = container.clientWidth / getVisibleItems();
     const currentIndex = Math.round(container.scrollLeft / (itemWidth + gap));
     setCurrentIndex(currentIndex);
-  };
+  }, [gap]);
 
   useEffect(() => {
     if (isAutoplayActive) {
@@ -201,7 +206,15 @@ export default function Carousel({
     return () => {
       stopAutoplay();
     };
-  }, [isAutoplayActive, loop, autoplaySpeed, autoplayType, smoothScrollSpeed]);
+  }, [
+    isAutoplayActive,
+    loop,
+    autoplaySpeed,
+    autoplayType,
+    smoothScrollSpeed,
+    startAutoplay,
+    stopAutoplay,
+  ]);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -209,7 +222,7 @@ export default function Carousel({
       container.addEventListener("scroll", updateCurrentIndex);
       return () => container.removeEventListener("scroll", updateCurrentIndex);
     }
-  }, [autoplayType]);
+  }, [autoplayType, updateCurrentIndex]);
 
   const totalDots = Math.max(0, children.length - getVisibleItems() + 1);
 
