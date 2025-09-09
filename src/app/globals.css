@@ -91,12 +91,18 @@
   --color-focused-text: #341C63;
   --color-text: #070707;
   --color-highlighted-text: #7300FF;
+  --color-highlighted-text-secondary: #541C9A;
   --color-transparent: transparent;
   --color-current: currentColor;
   --color-white: #ffffff;
   --color-black: #000000;
   --color-bg-secondary: #F6F2FB;
   --color-description: #262138;
+  --color-section-title: #21005D;
+  --color-gradient-first: #9900FF;
+  --color-gradient-second: #C5DCFF;
+  --color-border: #4A4363;
+  --color-service-card: #732FDE;
 }
 
 @theme inline {
@@ -111,12 +117,18 @@
   --color-focused-text: var(--color-focused-text);
   --color-text: var(--color-text);
   --color-highlighted-text: var(--color-highlighted-text);
+  --color-highlighted-text-secondary: var(--color-highlighted-text-secondary);
   --color-transparent: var(--color-transparent);
   --color-current: var(--color-current);
   --color-white: var(--color-white);
   --color-black: var(--color-black);
   --color-bg-secondary: var(--color-bg-secondary);
   --color-description: var(--color-description);
+  --color-section-title: var(--color-section-title);
+  --color-gradient-first: var(--color-gradient-first);
+  --color-gradient-second: var(--color-gradient-second);
+  --color-border: var(--color-border);
+  --color-service-card: var(--color-service-card);
 }
 
 @media (prefers-color-scheme: dark) {

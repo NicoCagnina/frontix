@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function Benefits() {
   return (
-    <div>
-      <div className="absolute right-0 hidden lg:flex z-0 top-310 -translate-y-2/2">
-        <div className="w-150 h-[250px] bg-gradient-to-r from-white to-secondary rounded-full blur-3xl opacity-35" />
+    <div className="py-8 relative overflow-visible">
+      <div className="absolute -right-30 hidden lg:flex z-0 top-60">
+        <div className="w-150 h-[250px] bg-gradient-to-r from-gradient-second to-gradient-first rounded-full blur-3xl opacity-40" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 items-end relative overflow-hidden">
         <div className="bg-focused-text p-6 rounded-lg shadow-md flex flex-col justify-center min-h-[300px] z-10">

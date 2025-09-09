@@ -14,13 +14,8 @@ export default function Section({
   className,
 }: SectionProps) {
   return (
-    <section id={id} className={`py-16 px-4 bg-bg-secondary ${className}`}>
-      <div className="container mx-auto max-w-6xl">
-        {title && (
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-            {title}
-          </h2>
-        )}
+    <section id={id} className={`py-8 px-4 bg-bg-secondary ${className}`}>
+      <div className="container mx-auto max-w-7xl">
         <div>{children}</div>
       </div>
     </section>

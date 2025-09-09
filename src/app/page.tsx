@@ -20,7 +20,7 @@ export default function HomePage() {
       <Section id="plataforma">
         <Platform />
       </Section>
-      <Section id="modulos" title="Explora nuestros módulos">
+      <Section id="modulos">
         <Modules />
       </Section>
       <Section title="Preguntas frecuentes">

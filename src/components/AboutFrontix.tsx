@@ -3,7 +3,7 @@ import Accordion, {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./ui/accordion";
+} from "./ui/Accordion";
 
 export default function AboutFrontix() {
   return (

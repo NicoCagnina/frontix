@@ -1,30 +1,5 @@
 import Image from "next/image";
-
-function FloatingCard({
-  title,
-  icon,
-  className,
-  width = "w-full",
-}: {
-  title: string;
-  icon: React.ReactNode;
-  className?: string;
-  width?: string;
-}) {
-  return (
-    <div
-      className={`flex items-center gap-4 px-4 py-2 rounded-xl shadow-lg bg-white/70 backdrop-blur-md border border-white/20 ${width} sm:w-auto ${className} z-10`}
-    >
-      {icon}
-      <div className="flex flex-col text-left">
-        <span className="text-[10px] font-medium text-purple-900/80">
-          USUARIOS
-        </span>
-        <span className="text-s font-medium text-gray-800">{title}</span>
-      </div>
-    </div>
-  );
-}
+import { FloatingCard } from "./ui/FloatingCard";
 
 export default function Hero() {
   return (
@@ -54,7 +29,7 @@ export default function Hero() {
         </div>
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 -z-10 w-[94%] rounded-[2rem] overflow-hidden">
           <Image
-            src="/images/hero-img.svg"
+            src="/images/HeroImg.svg"
             alt="Hero background"
             fill
             className="object-cover w-full h-full"
@@ -142,7 +117,7 @@ export default function Hero() {
       <section className="hidden lg:flex relative w-full min-h-[80vh] sm:min-h-[70vh] items-center justify-center text-white mt-6">
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 -z-10 w-[94%] sm:w-[92%] md:w-[90%] lg:w-[88%] xl:w-[84%] rounded-[2rem] overflow-hidden">
           <Image
-            src="/images/hero-img.svg"
+            src="/images/HeroImg.svg"
             alt="Hero background"
             fill
             className="object-cover w-full h-full"
@@ -212,7 +187,7 @@ export default function Hero() {
               alt="Hero Card"
               width={200}
               height={200}
-              className="absolute lg:top-12 lg:left-[73%] xl:left-[70%] xl:top-4 w-56 md:w-60 lg:w-3/6 z-4 opacity-90"
+              className="absolute lg:top-12 lg:left-[73%] xl:left-[65%] xl:top-4 w-56 md:w-60 lg:w-3/6 z-4 opacity-90"
             />
             <FloatingCard
               title="Reservar Espacios"
