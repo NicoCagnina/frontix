@@ -103,6 +103,8 @@
   --color-gradient-second: #C5DCFF;
   --color-border: #4A4363;
   --color-service-card: #732FDE;
+  --color-placeholder-text: #49454F;
+  --color-footer-bg: #281351;
 }
 
 @theme inline {
@@ -129,6 +131,8 @@
   --color-gradient-second: var(--color-gradient-second);
   --color-border: var(--color-border);
   --color-service-card: var(--color-service-card);
+  --color-placeholder-text: var(--color-placeholder-text);
+  --color-footer-bg: var(--color-footer-bg);
 }
 
 @media (prefers-color-scheme: dark) {

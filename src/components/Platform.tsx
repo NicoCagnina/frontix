@@ -92,7 +92,7 @@ export default function Platform() {
 
         <div className="w-full h-px bg-section-title" />
 
-        <div className="block lg:hidden ">
+        <div className="block lg:hidden mt-4 ">
           <div className="overflow-hidden -mx-4">
             <div className="px-4">
               <Carousel

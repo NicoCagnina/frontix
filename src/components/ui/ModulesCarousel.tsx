@@ -51,6 +51,19 @@ const moduleData: ModuleData[] = [
     ),
   },
   {
+    title: "Reservar Espacio",
+    type: "USER",
+    icon: (
+      <Image
+        src="/icons/CalendarIcon.svg"
+        alt="Calendar"
+        width={42}
+        height={42}
+        className="ml-4"
+      />
+    ),
+  },
+  {
     title: "Registrar Unidad",
     type: "ADMIN",
     icon: (
@@ -89,6 +102,19 @@ const moduleData: ModuleData[] = [
       />
     ),
   },
+  {
+    title: "Renovar Contratos",
+    type: "ADMIN",
+    icon: (
+      <Image
+        src="/icons/ContractIcon.svg"
+        alt="Contract"
+        width={42}
+        height={42}
+        className="ml-4"
+      />
+    ),
+  },
 ];
 
 interface ModulesCarouselProps {
@@ -103,13 +129,16 @@ export default function ModulesCarousel({
 
   return (
     <div className={`w-full space-y-6 ${className}`}>
-      <div className="w-full flex flex-row items-center justify-around">
+      <div className="w-full flex flex-col lg:flex-row items-center lg:justify-around gap-4 lg:gap-6">
+        <div className="w-5 h-5 text-highlighted-text border border-highlighted-text rounded-full flex items-center justify-center hover:bg-highlighted-text/10 transition-colors cursor-pointer">
+          <ChevronLeftIcon className="w-6 h-6" />
+        </div>
         <Carousel
           autoplay={false}
           loop={false}
           showDots={false}
-          className="w-full"
-          itemClassName="w-[280px] sm:w-[320px]"
+          className="w-full lg:flex-1"
+          itemClassName="w-[280px] sm:w-[320px] lg:w-[280px]"
           gap={16}
         >
           {lightCards.map((item, index) => (
@@ -124,25 +153,23 @@ export default function ModulesCarousel({
             />
           ))}
         </Carousel>
-        <div className="flex flex-row gap-8">
-          <div className="w-15 h-15 text-highlighted-text border border-highlighted-text rounded-full flex items-center justify-center hover:bg-highlighted-text/10 transition-colors">
-            <ChevronLeftIcon className="w-6 h-6" />
-          </div>
-          <div className="w-15 h-15 text-text border border-text rounded-full flex items-center justify-center hover:bg-highlighted-text/10 transition-colors">
-            <ChevronRightIcon className="w-6 h-6" />
-          </div>
+        <div className="w-5 h-5 text-text border border-text rounded-full flex items-center justify-center hover:bg-highlighted-text/10 transition-colors cursor-pointer">
+          <ChevronRightIcon className="w-6 h-6" />
         </div>
       </div>
 
       <div className="w-full h-px bg-section-title/10" />
 
-      <div className="w-full flex flex-row items-center justify-around">
+      <div className="w-full flex flex-col lg:flex-row items-center lg:justify-around gap-4 lg:gap-6">
+        <div className="w-5 h-5 text-highlighted-text border border-highlighted-text rounded-full flex items-center justify-center hover:bg-highlighted-text/10 transition-colors cursor-pointer">
+          <ChevronLeftIcon className="w-6 h-6" />
+        </div>
         <Carousel
           autoplay={false}
           loop={false}
           showDots={false}
-          className="w-full"
-          itemClassName="w-[280px] sm:w-[320px]"
+          className="w-full lg:flex-1"
+          itemClassName="w-[280px] sm:w-[320px] lg:w-[280px]"
           gap={16}
         >
           {darkCards.map((item, index) => (
@@ -157,13 +184,8 @@ export default function ModulesCarousel({
             />
           ))}
         </Carousel>
-        <div className="flex flex-row gap-8">
-          <div className="w-15 h-15 text-highlighted-text border border-highlighted-text rounded-full flex items-center justify-center hover:bg-highlighted-text/10 transition-colors">
-            <ChevronLeftIcon className="w-6 h-6" />
-          </div>
-          <div className="w-15 h-15 text-text border border-text rounded-full flex items-center justify-center hover:bg-highlighted-text/10 transition-colors">
-            <ChevronRightIcon className="w-6 h-6" />
-          </div>
+        <div className="w-5 h-5 text-text border border-text rounded-full flex items-center justify-center hover:bg-highlighted-text/10 transition-colors cursor-pointer">
+          <ChevronRightIcon className="w-6 h-6" />
         </div>
       </div>
     </div>

@@ -215,6 +215,7 @@ export function AccordionContent({
           opacity: open ? 1 : 0,
           transform: open ? "translateY(0)" : "translateY(-4px)",
           transition: "opacity 200ms ease, transform 200ms ease",
+          paddingBottom: open ? "1.5rem" : "0",
         }}
       >
         {children}
