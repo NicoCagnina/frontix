@@ -15,38 +15,40 @@ export default function Modules() {
 
           <div className="flex flex-col lg:flex-row items-center lg:items-start mb-4 lg:mb-8">
             <div className="w-full">
-              <h2 className="text-4xl sm:text-5xl lg:text-5xl leading-tight font-normal text-description mb-5 tracking-wider lg:whitespace-nowrap">
+              <h2 className="text-4xl sm:text-5xl lg:text-5xl leading-tight font-normal text-description mb-5 tracking-widest lg:whitespace-nowrap">
                 ¿Qué puedo
                 <span className="font-extralight italic"> hacer </span>
                 en
                 <span className="font-bold"> frontix®?</span>
               </h2>
             </div>
-            <div className="flex flex-col lg:flex-row gap-3 lg:gap-0">
+            <div className="flex flex-row gap-3 xl:gap-0">
               <Link
                 href="/faq"
-                className="text-center w-48 h-12 py-2 px-12
-                lg:mx-4 rounded-full bg-highlighted-text text-white text-m tracking-wide flex items-center justify-center lg:mt-5 font-light"
+                className="text-center w-36 h-10 py-2 px-5
+                xl:mx-4 rounded-full bg-highlighted-text text-white text-md tracking-wide flex items-center justify-center xl:mt-5 font-light
+                lg:w-48 lg:h-12"
               >
                 Contacto
               </Link>
               <Link
                 href="/#contacto"
-                className=" text-sm text-center w-48 h-12 py-2 px-12 border border-border tracking-wider
-                bg-[#E0E0E0] lg:mx-4 rounded-full text-highlighted-text-secondary flex items-center justify-center lg:mt-5 font-light"
+                className=" text-sm text-center w-36 h-10 py-2 px-5 border border-border tracking-wider
+                bg-[#E0E0E0] xl:mx-4 rounded-full text-highlighted-text-secondary flex items-center justify-center xl:mt-5 font-light
+                lg:w-48 lg:h-12"
               >
                 <ArrowRightIcon className="w-10 h-10 text-highlighted-text-secondary p-2 -ml-3" />
                 Más
               </Link>
             </div>
           </div>
-          <div className="w-full h-px bg-section-title" />
+          <div className="w-full h-px bg-section-title mt-8" />
         </div>
       </div>
-      <div className="relative w-full hidden lg:grid lg:grid-cols-2 pr-20">
+      <div className="relative w-full hidden xl:grid xl:grid-cols-2 pr-20">
         <div className="flex flex-row justify-start items-start mt-6 gap-4">
           <div className="absolute w-50 h-75 top-20 rounded-2xl left-65 z-1 bg-service-card justify-end pt-6 pr-6 flex" />
-          <div className="absolute right-190 lg:flex z-0 top-25">
+          <div className="absolute right-190 xl:flex z-0 top-25">
             <div
               className="w-[1000px] h-[450px] rounded-full blur-3xl opacity-60"
               style={{
@@ -75,12 +77,12 @@ export default function Modules() {
             className="absolute top-85 left-30 z-1 opacity-100 "
           />
         </div>
-        <div className="flex flex-col justify-center order-1 lg:order-2">
+        <div className="flex flex-col justify-center order-1 xl:order-2">
           <div className="mb-6">
             <h3 className="text-xl font-light mb-4 text-highlighted-text uppercase tracking-wide">
               USUARIOS
             </h3>
-            <h2 className="text-4xl sm:text-5xl lg:text-5xl leading-tight text-gray-800 mb-6">
+            <h2 className="text-4xl sm:text-5xl xl:text-5xl leading-tight text-gray-800 mb-6">
               Solicitar llaves
             </h2>
           </div>
@@ -114,16 +116,28 @@ export default function Modules() {
         </div>
       </div>
 
-      <div className="relative w-full flex flex-col lg:hidden">
-        <div className="flex justify-center items-center mt-6 mb-8 relative">
-          <div className="relative">
+      <div className="relative w-full flex flex-col xl:hidden">
+        <div className="flex justify-center items-center mt-6 mb-8 relative px-4">
+          <div className="relative w-full max-w-[450px]">
+            {/* Gradiente de fondo */}
+            <div className="absolute -top-5 -left-5 -right-5 -bottom-5 z-0">
+              <div
+                className="w-full h-full rounded-full blur-3xl opacity-40"
+                style={{
+                  background:
+                    "linear-gradient(265.01deg, rgba(153, 0, 255, 0.8) 25.78%, rgba(197, 220, 255, 0.8) 79.19%)",
+                }}
+              />
+            </div>
+            {/* Imagen principal */}
             <Image
               src="/images/ModulesImg.svg"
               alt="Module 1"
-              width={400}
-              height={400}
-              className="object-cover z-10 mx-auto"
+              width={600}
+              height={600}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/7 z-10 mx-auto w-[600px] h-[600px] object-cover overflow-visible"
             />
+            {/* FloatingCard */}
             <FloatingCard
               title="Solicitar llave"
               icon={
@@ -134,21 +148,13 @@ export default function Modules() {
                   height={24}
                 />
               }
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
+              width="w-[60%]"
+              className="absolute top-70 left-1/2 transform -translate-x-1/2 z-20"
             />
-            <div className="absolute -top-10 -left-10 -right-10 -bottom-10 z-0">
-              <div
-                className="w-full h-full rounded-full blur-3xl opacity-40"
-                style={{
-                  background:
-                    "linear-gradient(265.01deg, rgba(153, 0, 255, 0.6) 36.78%, rgba(197, 220, 255, 0.6) 103.19%)",
-                }}
-              />
-            </div>
           </div>
         </div>
 
-        <div className="flex flex-col items-center text-center px-4">
+        <div className="flex flex-col items-start text-start px-4 mt-[500px]">
           <div className="mb-6">
             <h3 className="text-lg font-light mb-4 text-highlighted-text uppercase tracking-wide">
               USUARIOS
@@ -164,7 +170,7 @@ export default function Modules() {
             de sus accesos de confianza.
           </p>
 
-          <div className="flex flex-col gap-3 items-center">
+          <div className="flex flex-row gap-4 items-center justify-center">
             <div className="flex items-center">
               <Image
                 src="/icons/AppStoreIcon.svg"

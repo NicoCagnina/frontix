@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky pt-4 z-50 bg-white top-0 w-full shadow-xs">
+    <header className="sticky pt-4 z-50 bg-white/80 backdrop-blur-md top-0 w-full shadow-xs">
       <nav className="container mx-auto flex items-center justify-between p-4 h-14">
         <Link
           href="#"
@@ -64,7 +64,7 @@ export default function Header() {
 
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 text-text hover:text-primary transition-colors"
+          className="md:hidden p-2 text-text hover:text-primary transition-colors relative z-50"
           aria-label="Abrir menú"
         >
           {isMenuOpen ? (
@@ -76,17 +76,17 @@ export default function Header() {
       </nav>
 
       <div
-        className={`md:hidden bg-white border-t border-gray-200 shadow-lg transition-all duration-300 ease-in-out transform overflow-hidden ${
+        className={`md:hidden fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-3xl shadow-lg transition-all duration-300 ease-in-out transform overflow-hidden z-30 ${
           isMenuOpen
-            ? "opacity-100 translate-y-0 max-h-96"
+            ? "opacity-100 translate-y-0 max-h-screen"
             : "opacity-0 -translate-y-4 max-h-0 pointer-events-none"
         }`}
       >
-        <ul className="container mx-auto py-4 space-y-4">
+        <ul className="container mx-auto py-20 px-4 space-y-4">
           <li className="text-sm text-center">
             <Link
               href="/#frontix"
-              className="block py-2 px-4 hover:bg-gray-50 transition-colors text-text"
+              className="block py-3 px-4 hover:bg-white/20 transition-colors text-text font-medium"
               onClick={closeMenu}
             >
               FRONTIX
@@ -95,7 +95,7 @@ export default function Header() {
           <li className="text-sm text-center">
             <Link
               href="/#plataforma"
-              className="block py-2 px-4 hover:bg-gray-50 transition-colors text-text"
+              className="block py-3 px-4 hover:bg-white/20 transition-colors text-text font-medium"
               onClick={closeMenu}
             >
               PRODUCTO
@@ -104,18 +104,22 @@ export default function Header() {
           <li className="text-sm text-center">
             <Link
               href="/#modulos"
-              className="block py-2 px-4 hover:bg-gray-50 transition-colors text-text"
+              className="block py-3 px-4 hover:bg-white/20 transition-colors text-text font-medium"
               onClick={closeMenu}
             >
               BENEFICIOS
             </Link>
           </li>
-          <li className="text-sm text-center border border-purple-500 py-2 px-4 mx-4 rounded-xl">
-            <Link href="/faq" onClick={closeMenu} className="text-text">
+          <li className="text-sm text-center border border-purple-500 py-3 px-4 mx-16 rounded-full bg-white/10">
+            <Link
+              href="/faq"
+              onClick={closeMenu}
+              className="text-text font-medium"
+            >
               ACCESO USUARIOS
             </Link>
           </li>
-          <li className="text-sm text-center border border-text py-2 px-4 mx-4 rounded-xl bg-purple-900 text-white">
+          <li className="text-sm text-center border border-text py-3 px-4 mx-16 rounded-full bg-primary text-white font-medium">
             <Link href="/#contacto" onClick={closeMenu}>
               ASESORAMIENTO
             </Link>

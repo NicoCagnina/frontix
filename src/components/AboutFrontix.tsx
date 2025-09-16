@@ -187,9 +187,15 @@ export default function AboutFrontix() {
                 </strong>
               </p>
             </div>
-            <div className="flex justify-center items-center mt-6 lg:-mt-10">
-              <div className="w-full max-w-full h-72 lg:h-120 bg-gray-800/50 rounded-2xl flex items-center justify-center text-white overflow-hidden">
-                Video Placeholder
+            <div className="flex justify-center items-center mt-6 lg:-mt-10 rounded-xl">
+              <div className="w-full max-w-full h-72 lg:h-120 rounded-xl overflow-hidden">
+                <Image
+                  src="/images/VideoPlaceholderImg.svg"
+                  alt="Video placeholder"
+                  width={800}
+                  height={480}
+                  className="w-full h-full object-cover rounded-xl"
+                />
               </div>
             </div>
           </div>

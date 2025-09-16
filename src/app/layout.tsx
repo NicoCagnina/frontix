@@ -2,6 +2,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { plusJakartaSans } from "./theme/fonts";
 
 // TODO: replace this with the actual metadata
 export const metadata = {
@@ -14,9 +15,6 @@ export const metadata = {
   creator: "Frontix",
   publisher: "Frontix",
   robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#ffffff",
-  colorScheme: "light",
   icons: {
     icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
     apple: [{ url: "/apple-touch-icon.png" }],
@@ -57,10 +55,19 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+  colorScheme: "light",
+};
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
-      <body className="min-h-screen flex flex-col">
+      <body
+        className={`${plusJakartaSans.variable} min-h-screen flex flex-col`}
+      >
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

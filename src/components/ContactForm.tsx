@@ -190,9 +190,9 @@ export default function ContactForm() {
         </div>
       </form>
       <div className="w-full h-px bg-section-title my-10" />
-      <div className="grid grid-cols-5 w-full justify-between my-20">
-        <div className="col-span-2">
-          <h4 className="text-border text-5xl font-light leading-snug tracking-wider">
+      <div className="grid grid-cols-7 w-full justify-between my-20">
+        <div className="col-span-3">
+          <h4 className="text-border text-5xl font-light leading-snug tracking-wide">
             Recibí información sobre actualizaciones.
           </h4>
           <div className="flex items-center mt-14">
@@ -211,7 +211,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="col-span-3 w-[600px] h-[250px] justify-self-end rounded-lg overflow-hidden relative">
+        <div className="col-span-4 w-[600px] h-[250px] justify-self-end rounded-lg overflow-hidden relative">
           <Image
             src="/images/ContactFormImg.svg"
             alt="Contact form image"
