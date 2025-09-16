@@ -1,8 +1,8 @@
 "use client";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
-import Carousel from "./Carousel";
 import Image from "next/image";
+import Carrousel from "./Carrousel";
 
 interface ModuleData {
   title: string;
@@ -133,7 +133,7 @@ export default function ModulesCarousel({
         <div className="hidden lg:flex w-5 h-5 text-highlighted-text border border-highlighted-text rounded-full  items-center justify-center hover:bg-highlighted-text/10 transition-colors cursor-pointer">
           <ChevronLeftIcon className="w-6 h-6" />
         </div>
-        <Carousel
+        <Carrousel
           autoplay={false}
           loop={false}
           showDots={false}
@@ -152,7 +152,7 @@ export default function ModulesCarousel({
               width="w-full"
             />
           ))}
-        </Carousel>
+        </Carrousel>
         <div className="hidden lg:flex w-5 h-5 text-text border border-text rounded-full  items-center justify-center hover:bg-highlighted-text/10 transition-colors cursor-pointer">
           <ChevronRightIcon className="w-6 h-6" />
         </div>
@@ -164,7 +164,7 @@ export default function ModulesCarousel({
         <div className="hidden lg:flex w-5 h-5 text-highlighted-text border border-highlighted-text rounded-full  items-center justify-center hover:bg-highlighted-text/10 transition-colors cursor-pointer">
           <ChevronLeftIcon className="w-6 h-6" />
         </div>
-        <Carousel
+        <Carrousel
           autoplay={false}
           loop={false}
           showDots={false}
@@ -183,7 +183,7 @@ export default function ModulesCarousel({
               width="w-full"
             />
           ))}
-        </Carousel>
+        </Carrousel>
         <div className="hidden lg:flex w-5 h-5 text-text border border-text rounded-full  items-center justify-center hover:bg-highlighted-text/10 transition-colors cursor-pointer">
           <ChevronRightIcon className="w-6 h-6" />
         </div>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Carousel from "./ui/Carousel";
+import Carrousel from "@/components/ui/Carrousel";
 
 interface PlatformItem {
   id: number;
@@ -95,7 +95,7 @@ export default function Platform() {
         <div className="block lg:hidden mt-4 ">
           <div className="overflow-hidden -mx-4">
             <div className="px-4">
-              <Carousel
+              <Carrousel
                 loop={true}
                 showDots={false}
                 itemClassName="w-[65vw] max-w-[320px] flex-shrink-0"
@@ -103,7 +103,7 @@ export default function Platform() {
                 {data.map((item) => (
                   <Card key={item.id} item={item} />
                 ))}
-              </Carousel>
+              </Carrousel>
             </div>
           </div>
         </div>

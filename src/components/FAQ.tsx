@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./ui/Accordion";
+} from "./ui/TextAccordion";
 
 export default function FAQ() {
   return (

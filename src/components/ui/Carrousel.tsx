@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
-interface CarouselProps {
+interface CarrouselProps {
   children: React.ReactNode[];
   autoplay?: boolean;
   autoplaySpeed?: number;
@@ -15,7 +15,7 @@ interface CarouselProps {
   autoplayType?: "discrete" | "continuous";
 }
 
-export default function Carousel({
+export default function Carrousel({
   children,
   autoplay = false,
   autoplaySpeed = 3000,
@@ -26,7 +26,7 @@ export default function Carousel({
   gap = 24,
   smoothScrollSpeed = 0.3,
   autoplayType = "discrete",
-}: CarouselProps) {
+}: CarrouselProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isAutoplayActive, setIsAutoplayActive] = useState(autoplay);
   const [currentIndex, setCurrentIndex] = useState(0);

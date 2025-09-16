@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./ui/Accordion";
+} from "@/components/ui/TextAccordion";
 
 export default function AboutFrontix() {
   return (
